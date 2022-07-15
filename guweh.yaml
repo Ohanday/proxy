@@ -1,0 +1,158 @@
+port: 8989
+socks-port: 1080
+allow-lan: true
+bind-address: '*'
+ipv6: false
+mode: rule
+log-level: info
+geodata-mode: true
+tcp-concurrent: true
+
+sniffer:
+  enable: true
+  sniffing:
+    - tls
+    - http
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+  force-domain:
+    - '+.google.com'
+    - '+.cloudflare.com'
+    - '+.cloudflare.net'
+    - '+.cloudfront.net'
+  port-whitelist:
+    - 443
+    - 80
+    - 8000-9000
+
+tun:
+  enable: true
+  device: meta
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: false
+  auto-detect-interface: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:2323
+  default-nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - https://dns.google/dns-query
+    - tls://dns.google:853
+  fallback:
+    - 1.1.1.1
+    - 1.0.0.1
+    - https://dns.cloudflare.com/dns-query
+    - tls://1dot1dot1dot1.cloudflare-dns.com:853
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    geosite:
+      - gfw
+
+proxies:
+  - {name: 🇮🇩 Connectindo, server: online.uc.edu, port: 80, type: vless, uuid: 2aa15c1a-9c11-46dc-8387-a6dd64bd1fb0, cipher: auto, tls: false, skip-cert-verify: false, servername: id-ct.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: id-ct.vpn-ws.com}}}
+  - {name: 🇮🇩 Elastis, server: online.uc.edu, port: 80, type: vless, uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f, cipher: auto, tls: false, skip-cert-verify: false, servername: cloud.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: cloud.vpn-ws.com}}}
+  - {name: 🇮🇩 Atha, server: online.uc.edu, port: 80, type: vless, uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f, cipher: auto, tls: false, skip-cert-verify: false, servername: id-atha.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: id-atha.vpn-ws.com}}}
+  - {name: 🇸🇬 Azure, server: online.uc.edu, port: 80, type: vless, uuid: 4e19a967-b635-4dfc-8670-ce044a870fd6, cipher: auto, tls: false, skip-cert-verify: false, servername: sga.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sga.vpn-ws.com}}}
+  - {name: 🇸🇬 Digital Ocean, server: online.uc.edu, port: 80, type: vless, uuid: c1446e03-a0de-481a-c988-7a14330e7baf, cipher: auto, tls: false, skip-cert-verify: false, servername: sgd.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sgd.vpn-ws.com}}}
+  - {name: 🇸🇬 Linode, server: online.uc.edu, port: 80, type: vless, uuid: 406eade0-94c4-4a67-d1b1-af9740a78c01, cipher: auto, tls: false, skip-cert-verify: false, servername: sgp.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sgp.vpn-ws.com}}}
+  - {name: 🇸🇬 HostSG, server: online.uc.edu, port: 80, type: vless, uuid: 82b918d0-711e-4a4b-9d14-9d1d53797a2e, cipher: auto, tls: false, skip-cert-verify: false, servername: sggs.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sggs.vpn-ws.com}}}
+  - {name: 🇸🇬 Melbicom, server: online.uc.edu, port: 80, type: vless, uuid: 42d96426-9229-46bf-c234-9bb08930eedb, cipher: auto, tls: false, skip-cert-verify: false, servername: sg-melbi.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sg-melbi.vpn-ws.com}}}
+
+proxy-groups:
+  - name: 🗂️ Group
+    type: select
+    proxies:
+      - 📌 Select
+      - ♻️ Auto
+      - 📊 Load Balance
+
+  - name: 📌 Select
+    type: select
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+
+  - name: ♻️ Auto
+    type: url-test
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+    tolerance: 150
+    url: 'http://cp.cloudflare.com'
+    interval: 300
+
+  - name: 📊 Load Balance
+    type: load-balance
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+    url: 'http://cp.cloudflare.com'
+    interval: 300
+    strategy: consistent-hashing # or round-robin
+
+rule-providers:
+  ⛔ Adblock:
+    type: http
+    behavior: classical
+    path: ./Adblock.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml'
+    interval: 86300
+
+  ☢️ Anti-Hijack:
+    type: http
+    behavior: classical
+    path: ./Hijack.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
+    interval: 86300
+
+rules:
+  - IN-TYPE,TUN,🗂️ Group
+  - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
+  - GEOSITE,category-ads-all,REJECT
+  - DOMAIN,api2.branch.io,REJECT
+  - DOMAIN,vulcan.branch.io,REJECT
+  - DOMAIN,vulcan1.branch.io,REJECT
+  - DOMAIN,vulcan2.branch.io,REJECT
+  - DOMAIN,vulcan3.branch.io,REJECT
+  - DOMAIN,mtalk.google.com,REJECT
+  - DOMAIN,clients4.google.com,REJECT
+  - DOMAIN,clients3.google.com,REJECT
+  - DOMAIN,clients2.google.com,REJECT
+  - DOMAIN,clients.google.com,REJECT
+  - DOMAIN,beacons5.gvt3.com,REJECT
+  - DOMAIN,graph.facebook.com,REJECT
+  - DOMAIN,connect.facebook.net,REJECT
+  - RULE-SET,⛔ Adblock,REJECT,no-resolve 
+  - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
+  - MATCH,🗂️ Group
