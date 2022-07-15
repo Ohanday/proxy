@@ -9,5 +9,5 @@ Available Server
 - 🇸🇬 HostSG [On]
 - 🇸🇬 Melbicom [On]
 
-Link
-> [[ click here ]](https://raw.githubusercontent.com/stealth-sr/proxy/vpn/guweh.yaml)
+Salin Link
+> https://raw.githubusercontent.com/stealth-sr/proxy/vpn/guweh.yaml
