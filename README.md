@@ -1,5 +1,5 @@
 # Proxy Profile for CMFA
-Available Server
+untuk paket XL Akrab, Available Server
 - 🇮🇩 Athamedia [On]
 - 🇮🇩 Connectindo [On]
 - 🇮🇩 Elastis [On]
