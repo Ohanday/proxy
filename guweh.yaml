@@ -165,7 +165,6 @@ rules:
   - DOMAIN,clients1.google.com,REJECT
   - DOMAIN,clients.google.com,REJECT
   - DOMAIN,beacons5.gvt3.com,REJECT
-  - DOMAIN-SUFFIX,graph.facebook.com,REJECT
   - DOMAIN,connect.facebook.net,REJECT
   - DOMAIN,mqtt-mini.facebook.com,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
