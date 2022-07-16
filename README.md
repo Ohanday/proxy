@@ -1,5 +1,5 @@
-# Proxy Profile for CMFA
-untuk paket XL Akrab, Available Server
+# Proxy Profile for CMFA - Paket internet XL Akrab wilayah Banten & Jabar
+Available Server
 - 🇮🇩 Athamedia [On]
 - 🇮🇩 Connectindo [On]
 - 🇮🇩 Elastis [On]
