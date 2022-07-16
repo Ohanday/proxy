@@ -144,7 +144,7 @@ rule-providers:
 rules:
   - IN-TYPE,SOCKS/TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
-  - OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
+  # - OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
   - GEOSITE,category-ads-all,REJECT
   - DOMAIN,api2.branch.io,REJECT
   - DOMAIN,vulcan.branch.io,REJECT
