@@ -9,5 +9,5 @@ Available Server
 - 🇸🇬 HostSG [On]
 - 🇸🇬 Melbicom [On]
 
-Salin Link
+Salin Link ini di Aplikasi Clash Meta For Android
 > https://raw.githubusercontent.com/stealth-sr/proxy/vpn/guweh.yaml
