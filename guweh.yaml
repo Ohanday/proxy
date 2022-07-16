@@ -141,6 +141,13 @@ rule-providers:
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
 
+  Sosmed:
+    type: http
+    behavior: classical
+    path: ./Sosmed.yaml
+    url: 'https://raw.githubusercontent.com/stealth-sr/aturan/vpn/sosmed.yaml'
+    interval: 86300.
+
 rules:
   - IN-TYPE,SOCKS/TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -163,4 +170,5 @@ rules:
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
   - PROCESS-NAME,com.whatsapp,DIRECT
+  - RULE-SET,Sosmed,📌 Select
   - MATCH,🗂️ Group
