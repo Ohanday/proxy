@@ -167,6 +167,7 @@ rules:
   - DOMAIN,beacons5.gvt3.com,REJECT
   - DOMAIN,graph.facebook.com,REJECT
   - DOMAIN,connect.facebook.net,REJECT
+  - DOMAIN,mqtt-mini.facebook.com,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
   - RULE-SET,Sosmed,📌 Select
