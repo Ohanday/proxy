@@ -169,5 +169,5 @@ rules:
   - DOMAIN,connect.facebook.net,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
-  - RULE-SET,Sosmed,🗂️ Group
+  - RULE-SET,Sosmed,📌 Select
   - MATCH,🗂️ Group
