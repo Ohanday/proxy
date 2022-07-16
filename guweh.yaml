@@ -155,4 +155,5 @@ rules:
   - DOMAIN,connect.facebook.net,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
+  - PROCESS-NAME,com.whatsapp,DIRECT
   - MATCH,🗂️ Group
