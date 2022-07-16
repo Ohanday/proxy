@@ -44,8 +44,8 @@ dns:
     - 8.8.8.8
     - 8.8.4.4
   use-hosts: true
-  enhanced-mode: redir-host # fake-ip 
-  # fake-ip-range: 198.18.0.1/16
+  enhanced-mode: fake-ip 
+  fake-ip-range: 198.18.0.1/16
   # fake-ip-filter:
     # - '+.whatsapp.net'
     # - '+.whatsapp.com'
@@ -141,13 +141,6 @@ rule-providers:
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
 
-  Sosmed:
-    type: http
-    behavior: classical
-    path: ./Sosmed.yaml
-    url: 'https://raw.githubusercontent.com/stealth-sr/aturan/vpn/sosmed.yaml'
-    interval: 86300.
-
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -169,5 +162,4 @@ rules:
   - DOMAIN,connect.facebook.net,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
-  - RULE-SET,Sosmed,📌 Select
   - MATCH,🗂️ Group
