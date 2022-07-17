@@ -83,6 +83,9 @@ proxy-groups:
       - 📌 Select
       - ♻️ Auto
       - 📊 Load Balance
+      - 📱 Sosmed
+      - 🎮 Gaming
+      - 🎞️ Streaming
 
   - name: 📌 Select
     type: select
@@ -126,6 +129,42 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing # or round-robin
 
+  - name: 📱 Sosmed
+    type: select
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+
+  - name: 🎮 Gaming
+    type: select
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+
+  - name: 🎞️ Streaming
+    type: select
+    proxies:
+      - 🇮🇩 Connectindo
+      - 🇮🇩 Elastis
+      - 🇮🇩 Atha
+      - 🇸🇬 Azure
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+      - 🇸🇬 HostSG
+      - 🇸🇬 Melbicom
+
 rule-providers:
   ⛔ Adblock:
     type: http
@@ -141,17 +180,38 @@ rule-providers:
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
 
-  Sosmed:
+  LAN:
+    type: http
+    behavior: ipcidr
+    path: ./LAN.yaml
+    url: 'https://raw.githubusercontent.com/stealth-sr/provider/vpn/LAN.txt'
+    interval: 86300
+
+  📱 Sosmed:
     type: http
     behavior: classical
     path: ./Sosmed.yaml
-    url: 'https://raw.githubusercontent.com/stealth-sr/aturan/vpn/sosmed.yaml'
-    interval: 86300.
+    url: 'https://raw.githubusercontent.com/stealth-sr/provider/vpn/sosmed.yaml'
+    interval: 86300
+
+  🎞️ Streaming:
+    type: http
+    behavior: classical
+    path: ./Streaming.yaml
+    url: 'https://raw.githubusercontent.com/stealth-sr/provider/vpn/streaming.yaml'
+    interval: 86300
+
+  🎮 Gaming:
+    type: http
+    behavior: classical
+    path: ./Gaming.yaml
+    url: 'https://raw.githubusercontent.com/stealth-sr/provider/vpn/Gaming.yaml'
+    interval: 86300
 
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
-  # - OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
+  #- OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
   - GEOSITE,category-ads-all,REJECT
   - DOMAIN,api2.branch.io,REJECT
   - DOMAIN,vulcan.branch.io,REJECT
@@ -162,12 +222,14 @@ rules:
   - DOMAIN,clients4.google.com,REJECT
   - DOMAIN,clients3.google.com,REJECT
   - DOMAIN,clients2.google.com,REJECT
-  - DOMAIN,clients1.google.com,REJECT
   - DOMAIN,clients.google.com,REJECT
   - DOMAIN,beacons5.gvt3.com,REJECT
-  - DOMAIN,connect.facebook.net,REJECT
   - DOMAIN,mqtt-mini.facebook.com,REJECT
+  - DOMAIN,connect.facebook.net,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve 
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
-  - RULE-SET,Sosmed,📌 Select
+  - RULE-SET,📱 Sosmed,📱 Sosmed
+  - RULE-SET,🎞️ Streaming,🎞️ Streaming 
+  - RULE-SET,🎮 Gaming,🎮 Gaming
+  - RULE-SET,LAN,DIRECT
   - MATCH,🗂️ Group
