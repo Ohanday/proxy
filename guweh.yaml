@@ -1,3 +1,7 @@
+# Creator: sus
+# Telegram: @s_u_s5
+
+
 port: 8989
 socks-port: 1080
 mixed-port: 5555
@@ -67,14 +71,125 @@ dns:
       - gfw
 
 proxies:
-  - {name: 🇮🇩 Connectindo, server: 104.21.21.147, port: 80, type: vless, uuid: 2aa15c1a-9c11-46dc-8387-a6dd64bd1fb0, cipher: auto, tls: false, skip-cert-verify: false, servername: id-ct.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: id-ct.vpn-ws.com}}}
-  - {name: 🇮🇩 Elastis, server: 104.21.21.147, port: 80, type: vless, uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f, cipher: auto, tls: false, skip-cert-verify: false, servername: cloud.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: cloud.vpn-ws.com}}}
-  - {name: 🇮🇩 Atha, server: 104.21.21.147, port: 80, type: vless, uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f, cipher: auto, tls: false, skip-cert-verify: false, servername: id-atha.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: id-atha.vpn-ws.com}}}
-  - {name: 🇸🇬 Azure, server: 104.21.21.147, port: 80, type: vless, uuid: 4e19a967-b635-4dfc-8670-ce044a870fd6, cipher: auto, tls: false, skip-cert-verify: false, servername: sga.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sga.vpn-ws.com}}}
-  - {name: 🇸🇬 Digital Ocean, server: 104.21.21.147, port: 80, type: vless, uuid: c1446e03-a0de-481a-c988-7a14330e7baf, cipher: auto, tls: false, skip-cert-verify: false, servername: sgd.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sgd.vpn-ws.com}}}
-  - {name: 🇸🇬 Linode, server: 104.21.21.147, port: 80, type: vless, uuid: 406eade0-94c4-4a67-d1b1-af9740a78c01, cipher: auto, tls: false, skip-cert-verify: false, servername: sgp.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sgp.vpn-ws.com}}}
-  - {name: 🇸🇬 HostSG, server: 104.21.21.147, port: 80, type: vless, uuid: 82b918d0-711e-4a4b-9d14-9d1d53797a2e, cipher: auto, tls: false, skip-cert-verify: false, servername: sggs.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sggs.vpn-ws.com}}}
-  - {name: 🇸🇬 Melbicom, server: 104.21.21.147, port: 80, type: vless, uuid: 42d96426-9229-46bf-c234-9bb08930eedb, cipher: auto, tls: false, skip-cert-verify: false, servername: sg-melbi.vpn-ws.com, network: ws, ws-opts: {path: /vpnws, headers: {Host: sg-melbi.vpn-ws.com}}}
+  - name: 🇮🇩 Atha
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
+    udp: true
+    tls: false
+    network: ws
+    servername: id-atha.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: id-atha.vpn-ws.com
+
+  - name: 🇮🇩 Connectindo
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 2aa15c1a-9c11-46dc-8387-a6dd64bd1fb0
+    udp: true
+    tls: false
+    network: ws
+    servername: id-ct.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: id-ct.vpn-ws.com
+
+  - name: 🇮🇩 Elastis
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
+    udp: true
+    tls: false
+    network: ws
+    servername: cloud.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: cloud.vpn-ws.com
+
+  - name: 🇸🇬 Azure
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 4e19a967-b635-4dfc-8670-ce044a870fd6
+    udp: true
+    tls: false
+    network: ws
+    servername: sga.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sga.vpn-ws.com
+
+  - name: 🇸🇬 Digital Ocean
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: c1446e03-a0de-481a-c988-7a14330e7baf
+    udp: true
+    tls: false
+    network: ws
+    servername: sgd.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sgd.vpn-ws.com
+
+  - name: 🇸🇬 HostSG
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 82b918d0-711e-4a4b-9d14-9d1d53797a2e
+    udp: true
+    tls: false
+    network: ws
+    servername: sggs.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sggs.vpn-ws.com
+
+  - name: 🇸🇬 Linode
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 406eade0-94c4-4a67-d1b1-af9740a78c01
+    udp: true
+    tls: false
+    network: ws
+    servername: sgp.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sgp.vpn-ws.com
+
+  - name: 🇸🇬 Melbicom
+    type: vless
+    server: 104.21.21.147
+    port: 80
+    uuid: 42d96426-9229-46bf-c234-9bb08930eedb
+    udp: true
+    tls: false
+    network: ws
+    servername: sg-melbi.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sg-melbi.vpn-ws.com
 
 proxy-groups:
   - name: 🗂️ Group
@@ -90,9 +205,9 @@ proxy-groups:
   - name: 📌 Select
     type: select
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -102,9 +217,9 @@ proxy-groups:
   - name: ♻️ Auto
     type: url-test
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -117,9 +232,9 @@ proxy-groups:
   - name: 📊 Load Balance
     type: load-balance
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -132,9 +247,9 @@ proxy-groups:
   - name: 📱 Sosmed
     type: select
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -144,9 +259,9 @@ proxy-groups:
   - name: 🎮 Gaming
     type: select
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -156,9 +271,9 @@ proxy-groups:
   - name: 🎞️ Streaming
     type: select
     proxies:
+      - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇮🇩 Atha
       - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
@@ -211,7 +326,7 @@ rule-providers:
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
-  #- OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
+  # - OR,((NETWORK,UDP),(DOMAIN,123.xl.co.id)),REJECT
   - GEOSITE,category-ads-all,REJECT
   - DOMAIN,api2.branch.io,REJECT
   - DOMAIN,vulcan.branch.io,REJECT
@@ -222,6 +337,7 @@ rules:
   - DOMAIN,clients4.google.com,REJECT
   - DOMAIN,clients3.google.com,REJECT
   - DOMAIN,clients2.google.com,REJECT
+  - DOMAIN,clients1.google.com,REJECT
   - DOMAIN,clients.google.com,REJECT
   - DOMAIN,beacons5.gvt3.com,REJECT
   - DOMAIN,mqtt-mini.facebook.com,REJECT
