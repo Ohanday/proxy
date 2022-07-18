@@ -48,12 +48,7 @@ dns:
     - 8.8.8.8
     - 8.8.4.4
   use-hosts: true
-  enhanced-mode: redir-host # fake-ip 
-  # fake-ip-range: 198.18.0.1/16
-  # fake-ip-filter:
-    # - '+.whatsapp.net'
-    # - '+.whatsapp.com'
-    # - '+.whatsapp.org'
+  enhanced-mode: redir-host
   nameserver:
     - 8.8.8.8
     - 8.8.4.4
@@ -71,6 +66,7 @@ dns:
       - gfw
 
 proxies:
+# Vless
   - name: 🇮🇩 Atha
     type: vless
     server: 104.21.21.147
@@ -191,6 +187,33 @@ proxies:
       headers:
         Host: sg-melbi.vpn-ws.com
 
+# Shadowsocks v2ray
+  - name: Linode
+    type: ss
+    server: 104.21.21.147
+    port: 80
+    cipher: rc4-md5
+    password: vpnws
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: cdn.vpn-ws.com
+      path: /vpnws
+      mux: false
+
+  - name: Azure
+    type: ss
+    server: 104.21.21.147
+    port: 80
+    cipher: rc4-md5
+    password: vpnws
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ze.vpn-ws.com
+      path: /vpnws
+      mux: false
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -201,6 +224,8 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
+      - SS V2ray
+      - DIRECT
 
   - name: 📌 Select
     type: select
@@ -279,6 +304,12 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
       - 🇸🇬 Melbicom
+
+  - name: SS V2ray
+    type: select
+    proxies:
+      - Linode
+      - Azure
 
 rule-providers:
   ⛔ Adblock:
