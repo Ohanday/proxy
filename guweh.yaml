@@ -224,7 +224,6 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
-      - SS V2ray
       - DIRECT
 
   - name: 📌 Select
@@ -304,12 +303,6 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
       - 🇸🇬 Melbicom
-
-  - name: SS V2ray
-    type: select
-    proxies:
-      - Linode
-      - Azure
 
 rule-providers:
   ⛔ Adblock:
