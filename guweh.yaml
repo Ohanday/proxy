@@ -66,7 +66,7 @@ dns:
       - gfw
 
 proxies:
-# Vless
+# Vless WS
   - name: 🇮🇩 Atha
     type: vless
     server: 104.21.21.147
@@ -187,32 +187,56 @@ proxies:
       headers:
         Host: sg-melbi.vpn-ws.com
 
-# Shadowsocks v2ray
+# Shadowsocks 2022 Websocket & Trojan WS
   - name: Linode
     type: ss
     server: 104.21.21.147
     port: 80
-    cipher: rc4-md5
-    password: vpnws
+    cipher: 2022-blake3-aes-256-gcm
+    password: mZTgllJlWusCcJDrgLWAcUEK2hVt2mRRTzE5AYFPtC1J
+    udp: true
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: cdn.vpn-ws.com
-      path: /vpnws
+      host: xray.vpnws.site
+      tls: false
+      skip-cert-verify: true
+      path: "/vpnws"
       mux: false
+      headers:
+        custom: xray.vpnws.site
 
   - name: Azure
     type: ss
     server: 104.21.21.147
     port: 80
-    cipher: rc4-md5
-    password: vpnws
+    cipher: 2022-blake3-aes-256-gcm
+    password: Jr1FbKafhVXkoFDhSYCg7t1ed9scEgepfbdcJACI2P6j
+    udp: true
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: ze.vpn-ws.com
-      path: /vpnws
+      host: core.vpnws.site
+      tls: false
+      skip-cert-verify: true
+      path: "/vpnws"
       mux: false
+      headers:
+        custom: core.vpnws.site
+
+  - name: Nebula
+    server: 104.21.21.147
+    port: 443
+    type: trojan
+    password: nebula
+    network: ws
+    sni: nebula.vpnws.site
+    skip-cert-verify: true
+    udp: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: nebula.vpnws.site
 
 proxy-groups:
   - name: 🗂️ Group
@@ -224,6 +248,7 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
+      - SS2022-WS & TRWS
       - DIRECT
 
   - name: 📌 Select
@@ -303,6 +328,13 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
       - 🇸🇬 Melbicom
+
+  - name: SS2022-WS & TRWS
+    type: select
+    proxies:
+      - Linode
+      - Azure
+      - Nebula
 
 rule-providers:
   ⛔ Adblock:
