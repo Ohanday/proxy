@@ -3,7 +3,7 @@ Available Server
 - 🇮🇩 Athamedia [On]
 - 🇮🇩 Connectindo [On]
 - 🇮🇩 Elastis [On]
-- 🇸🇬 Azure [On]
+- 🇸🇬 Azure [Off]
 - 🇸🇬 Digital Ocean [On]
 - 🇸🇬 Linode [On]
 - 🇸🇬 HostSG [On]
