@@ -112,21 +112,6 @@ proxies:
       headers:
         Host: cloud.vpn-ws.com
 
-  - name: 🇸🇬 Azure
-    type: vless
-    server: 104.21.21.147
-    port: 80
-    uuid: 4e19a967-b635-4dfc-8670-ce044a870fd6
-    udp: true
-    tls: false
-    network: ws
-    servername: sga.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sga.vpn-ws.com
-
   - name: 🇸🇬 Digital Ocean
     type: vless
     server: 104.21.21.147
@@ -257,7 +242,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
@@ -269,7 +253,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
@@ -284,7 +267,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
@@ -299,7 +281,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
@@ -311,7 +292,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
@@ -323,7 +303,6 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
-      - 🇸🇬 Azure
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
