@@ -82,21 +82,6 @@ proxies:
       headers:
         Host: id-atha.vpn-ws.com
 
-  - name: 🇮🇩 Connectindo
-    type: vless
-    server: 104.21.21.147
-    port: 80
-    uuid: 2aa15c1a-9c11-46dc-8387-a6dd64bd1fb0
-    udp: true
-    tls: false
-    network: ws
-    servername: id-ct.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: id-ct.vpn-ws.com
-
   - name: 🇮🇩 Elastis
     type: vless
     server: 104.21.21.147
@@ -127,21 +112,6 @@ proxies:
       headers:
         Host: sgd.vpn-ws.com
 
-  - name: 🇸🇬 HostSG
-    type: vless
-    server: 104.21.21.147
-    port: 80
-    uuid: 82b918d0-711e-4a4b-9d14-9d1d53797a2e
-    udp: true
-    tls: false
-    network: ws
-    servername: sggs.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sggs.vpn-ws.com
-
   - name: 🇸🇬 Linode
     type: vless
     server: 104.21.21.147
@@ -156,21 +126,6 @@ proxies:
       path: /vpnws
       headers:
         Host: sgp.vpn-ws.com
-
-  - name: 🇸🇬 Melbicom
-    type: vless
-    server: 104.21.21.147
-    port: 80
-    uuid: 42d96426-9229-46bf-c234-9bb08930eedb
-    udp: true
-    tls: false
-    network: ws
-    servername: sg-melbi.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sg-melbi.vpn-ws.com
 
 # Shadowsocks 2022 Websocket & Trojan WS
   - name: Linode
@@ -240,23 +195,17 @@ proxy-groups:
     type: select
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
 
   - name: ♻️ Auto
     type: url-test
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
     tolerance: 150
     url: 'http://cp.cloudflare.com'
     interval: 300
@@ -265,12 +214,9 @@ proxy-groups:
     type: load-balance
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
     url: 'http://cp.cloudflare.com'
     interval: 300
     strategy: consistent-hashing # or round-robin
@@ -279,35 +225,26 @@ proxy-groups:
     type: select
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
-
+      
   - name: 🎮 Gaming
     type: select
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
-
+      
   - name: 🎞️ Streaming
     type: select
     proxies:
       - 🇮🇩 Atha
-      - 🇮🇩 Connectindo
       - 🇮🇩 Elastis
       - 🇸🇬 Digital Ocean
       - 🇸🇬 Linode
-      - 🇸🇬 HostSG
-      - 🇸🇬 Melbicom
-
+      
   - name: SS2022-WS & TRWS
     type: select
     proxies:
