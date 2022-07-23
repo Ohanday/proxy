@@ -116,7 +116,7 @@ proxies:
     type: vless
     server: 104.21.21.147
     port: 80
-    uuid: 406eade0-94c4-4a67-d1b1-af9740a78c01
+    uuid: 394664e5-127c-4ab6-fe18-c0eac2a85bca
     udp: true
     tls: false
     network: ws
