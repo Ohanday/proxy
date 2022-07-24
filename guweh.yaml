@@ -164,20 +164,6 @@ proxies:
       headers:
         custom: core.vpnws.site
 
-  - name: Nebula
-    server: 104.21.21.147
-    port: 443
-    type: trojan
-    password: nebula
-    network: ws
-    sni: nebula.vpnws.site
-    skip-cert-verify: true
-    udp: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: nebula.vpnws.site
-
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -250,7 +236,6 @@ proxy-groups:
     proxies:
       - Linode
       - Azure
-      - Nebula
 
 rule-providers:
   ⛔ Adblock:
